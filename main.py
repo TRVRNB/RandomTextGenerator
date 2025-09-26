@@ -47,12 +47,12 @@ print("• Successfully loaded and parsed words.json")
 text = ""
 paragraph_count = int(input("How many paragraphs?: "))
 print("\n" + "—" * 80 + "\n")
-for _ in range(paragraph_count):
+for _ in range(paragraph_count): # paragraphs
     tense = random.choice(("past", "present", "neutral"))
-    for _ in range(random.randint(1, 15)):
+    for _ in range(random.randint(1, 15)): # sentences
         sentence = ""
         next_part = random.choice(STARTING_PARTS)
-        for i in range(9999): # extreme upper bound
+        for i in range(9999): # words, 9999 is an extreme upper bound to prevent infinite loops
             # choose a part
             part = next_part
             next_part = random.choice(VALID_PARTS[part])
