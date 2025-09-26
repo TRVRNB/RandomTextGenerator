@@ -26,10 +26,10 @@ STARTING_PARTS = (
 
 VALID_PARTS = {
 	"noun": ("verb", "verb", "preposition"),
-	"pronoun": ("verb", "verb", "adjective", "adverb"),
+	"pronoun": ("verb", "verb"),
 	"article": ("adjective", "adjective", "noun", "noun", "proper_noun"),
 	"adjective": ("noun", "adjective", "adverb"),
-	"verb": ("noun", "pronoun", "adverb", "preposition", "conjunction"),
+	"verb": ("noun", "pronoun", "adverb", "adverb", "preposition", "conjunction"),
 	"adverb": ("verb", "adjective", "adverb"),
 	"preposition": ("article", "article", "noun", "proper_noun", "pronoun"),
 	"conjunction": ("noun", "pronoun", "article", "adjective", "verb"),
