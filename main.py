@@ -46,7 +46,7 @@ print("• Successfully loaded and parsed words.json")
 
 text = ""
 paragraph_count = int(input("How many paragraphs?: "))
-print("\n" + "-" * 100 + "\n")
+print("\n" + "—" * 80 + "\n")
 for _ in range(paragraph_count):
     tense = random.choice(("past", "present", "neutral"))
     for _ in range(random.randint(1, 15)):
@@ -76,7 +76,7 @@ for _ in range(paragraph_count):
                     next_part = random.choice(STARTING_PARTS)
                     break
                 else:
-                    sentence += random.choice((",", ",", ",", ";")) + " " # easier than doing weights
+                    sentence += random.choice((",", ",", ",", ",", ",", ",", ";", ";", "—", ":")) + " " # easier than doing weights
                     next_part = "preposition"
             else:
                 # add a space to the sentence, and a comma if there are 2 adjectives
