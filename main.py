@@ -45,11 +45,11 @@ WORD_LIST = json.loads(WORD_LIST) # this should overwrite the original in memory
 print("• Successfully loaded and parsed words.json")
 
 text = ""
-tense = random.choice(("past", "present", "neutral"))
 paragraph_count = int(input("How many paragraphs?: "))
 print("\n" + "-" * 100 + "\n")
 for _ in range(paragraph_count):
-    for _ in range(random.randint(1, 10)):
+    tense = random.choice(("past", "present", "neutral"))
+    for _ in range(random.randint(1, 15)):
         sentence = ""
         next_part = random.choice(STARTING_PARTS)
         for i in range(9999): # extreme upper bound
@@ -80,7 +80,7 @@ for _ in range(paragraph_count):
                     next_part = "preposition"
             else:
                 # add a space to the sentence, and a comma if there are 2 adjectives
-                if part == "adjective" and next_part == "adjective":
+                if part == "adjective" and next_part == "adjective" or part == "adverb" and next_part == "adverb":
                     sentence += word + ", "
                 else:
                     sentence += word + " "
@@ -91,3 +91,4 @@ for _ in range(paragraph_count):
 print(text.strip())
 sys.stdout = open("output.txt", "w") # this makes all future print statements print directly to output.txt
 print(text.strip())
+input()
